@@ -8,10 +8,12 @@ class Array8{
 	}
 	
 	void reverse(int[] arr,int low,int high){
-		for(int i=low;i<high/2;i++){
-			int x=arr[i];
-			arr[i]=arr[high - i];
-			arr[high - i]=x;
+		while(low<=high){
+			int temp=arr[low];
+			arr[low]=arr[high];
+			arr[high]=temp;
+			low++;
+			high--;
 		}
 	}
 }
@@ -19,7 +21,7 @@ class Run{
 	public static void main(String[] args){
 		Array8 a=new Array8();
         int arr[]={1,2,3,4,5,6};
-		a.leftRotate(arr,7);
+		a.leftRotate(arr,3);
 		for(int i:arr){
 			System.out.println(i);
 		}
